@@ -11,3 +11,4 @@ function obtenerPelicula(url) {
       console.log(data);
     })
 }
+
