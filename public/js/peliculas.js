@@ -39,23 +39,24 @@ function mostrarPelicula(data) {
      <div class="contenedorInformacion">
        <h1 class="nombrePelicula">${title}</h1>
 
-       <h2 class="categoria">Ciencia Ficción y Fantasía</h2>
+       <h2 class="categoria">Acción y Aventura</h2>
 
        <div class="contenedorDuracion">
-         <h3 class="textoDuracion">125 min</h3>
+         <h3 class="textoDuracion">145 min</h3>
        </div>
 
        <div class="textoInformacion">
          <p> ${overview} </p>
        </div>
-
+       
        <div class="favorito">
-         <img src="./img/estrella.svg" alt="Favorito">
-       </div>
-       <div class="descargar">
-         <a href="#">
-           <img src="./img/descargar.svg" alt="Descargar"></a>
-       </div>
+       <img src="./img/estrella.svg" alt="Favorito">
+     </div>
+     <div class="descargar">
+       <a href="#">
+         <img src="./img/descargar.svg" alt="Descargar"></a>
+     </div>
+
 
      </div>
 
