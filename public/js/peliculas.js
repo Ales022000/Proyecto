@@ -21,7 +21,7 @@ function mostrarPelicula(data) {
 
     data.forEach(pelicula => {
        
-       const {title, poster_path, vote_average, overview} = pelicula;
+       const {title, poster_path, vote_average, overview, runtime} = pelicula;
        const peliculaE1 = document.createElement('div');
        peliculaE1.classList.add('contenedorPeliculas');
        peliculaE1.innerHTML = `
@@ -42,7 +42,7 @@ function mostrarPelicula(data) {
        <h2 class="categoria">Acción y Aventura</h2>
 
        <div class="contenedorDuracion">
-         <h3 class="textoDuracion">145 min</h3>
+         <h3 class="textoDuracion">${runtime}</h3>
        </div>
 
        <div class="textoInformacion">
