@@ -21,9 +21,11 @@ function mostrarPelicula(data) {
 
     data.forEach(pelicula => {
        
-       const {title, poster_path, vote_average, overview, runtime, genres} = pelicula;
+       const {id, title, poster_path, vote_average, overview, runtime, genres} = pelicula;
        const peliculaE1 = document.createElement('div');
+       peliculaE1.setAttribute('href', `/movie-info.html?id=${id}`)
        peliculaE1.classList.add('contenedorPeliculas');
+       
        peliculaE1.innerHTML = `
        
        <div class="contenedorTrending">
