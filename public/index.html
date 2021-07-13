@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css" />
-  <title>Trending Movies</title>
+  <title>Peliculas </title>
 </head>
 
 
@@ -14,11 +14,14 @@
   <div class="fixed w-full h-full bg-cover fondoPantalla -z-1"></div>
 
   <header class="fixed top-0 z-20 w-full">
-    <div class="flex w-full py-4 bg-gray-400">
+
+    <div class="flex w-full py-4 bg-gray-400"> 
+
       <div class="my-auto ml-4 mr-auto">
         <a href="#" class="block w-6">
           <img src="./img/boton-de-menu-de-tres-lineas-horizontales.svg" alt="Menú"></a>
       </div>
+
       <div class="class= my-auto mx-auto inline-flex">
         <select class="text-lg text-blue-500 bg-gray-400 text-semibold md:hidden">
           <option>Trending Movies</option>
@@ -26,349 +29,53 @@
           <option>Other Options2</option>
         </select>
         <div class="hidden text-lg text-blue-500 text-semibold md:flex ">
-          <a href="#" class="w-auto mx-4">Trending Movies</a>
-          <a href="#" class="w-auto mx-4">Other Optionsjjj1</a>
-          <a href="#" class="w-auto mx-4">Other Options2</a>
+          <a href="#" class="w-auto mx-4">Inicio</a>
+          <select class="bg-transparent" name="Genero" id="GeneroDePelicula">
+
+            <option selected>Género</option>
+
+            <option>Coche</option>
+            
+            <option>Avión</option>
+            
+            <option>Tren</option>
+            
+            </select>
+      
+            <select class="bg-transparent" name="Peliculas" id="Peliculas">
+
+              <option selected>Peliculas</option>
+  
+              <option >Episodios</option>
+            
+              
+              </select>
+
+          <select class="bg-transparent" name="Serie" id="Serie">
+
+            <option>Series</option>
+
+            <option >Episodios</option>
+          
+            
+            </select>
+      
         </div>
       </div>
-      <div class="my-auto ml-auto mr-4">
+
+       
+      <div class="my-auto mx-auto inline-flex bg-red-500">
+        <input class="bg-white rounded-md" id="busquedaPelicula">
         <a href="#" class="block w-6">
           <img src="./img/buscar.svg" alt="Buscar"></a>
       </div>
+
     </div>
   </header>
 
   <div class="w-full px-2 pt-20 pb-10 md:pl-16" id="main">
 
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="border rounded-xl" src="./img/Rapidos.jpg" alt="Rápidos y Furiosos">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">4.8</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-
-        <h1 class="nombrePelicula">Rápidos y Furiosos</h1>
-
-        <h2 class="categoria">Acción y Aventura</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">145 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2021) F9 es una película de acción estadounidense de 2021 dirigida por Justin Lin y escrita por
-            Daniel Casey.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Linterna.jpg" alt="Sonic">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">3.7</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula">Linterna Verde</h1>
-
-        <h2 class="categoria">Acción y Ciencia Ficción</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">123 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2011) Creados para preservar el orden intergaláctico, los Linternas Verdes han existido durante
-            varios siglos.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Avengers.jpg" alt="Avergers">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">4.7</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula">Avengers: Endgame</h1>
-
-        <h2 class="categoria">Acción y Ciencia Ficción</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">182 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2019) Los Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un
-            enfrentamiento
-            épico con Thanos.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Pinocho.jpg" alt="Pinocho">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">3.1</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula" id="nombrePelicula">PINOCCHIO</h1>
-
-        <h2 class="categoria">Ciencia Ficción y Fantasía</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">125 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-          <p>(2019) Relata la historia de uno de los cuentos más truculentos con un enfoque neorrealista con un
-            toque
-            tenebroso
-            (...) <a class="text-blue-400">Detalles</a> </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="border rounded-xl" src="./img/Rapidos.jpg" alt="Rápidos y Furiosos">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">4.8</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-
-        <h1 class="nombrePelicula">Rápidos y Furiosos</h1>
-
-        <h2 class="categoria">Acción y Aventura</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">145 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2021) F9 es una película de acción estadounidense de 2021 dirigida por Justin Lin y escrita por
-            Daniel Casey.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Linterna.jpg" alt="Sonic">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">3.7</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula">Linterna Verde</h1>
-
-        <h2 class="categoria">Acción y Ciencia Ficción</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">123 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2011) Creados para preservar el orden intergaláctico, los Linternas Verdes han existido durante
-            varios siglos.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas" id="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Avengers.jpg" alt="Avergers">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">4.7</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula">Avengers: Endgame</h1>
-
-        <h2 class="categoria">Acción y Ciencia Ficción</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">182 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-
-          <p>(2019) Los Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un
-            enfrentamiento
-            épico con Thanos.
-            <a class="text-blue-400">Detalles</a>
-          </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="contenedorPeliculas">
-
-      <div class="contenedorTrending">
-        <img class="rounded-xl" src="./img/Pinocho.jpg" alt="Pinocho">
-        <div class="play">
-          <img src="./img/boton-de-play (3).svg" alt="Play">
-        </div>
-        <div class="contenedorCalificacion">
-          <h1 class="textoCalificacion">3.1</h1>
-        </div>
-      </div>
-
-      <div class="contenedorInformacion">
-        <h1 class="nombrePelicula">PINOCCHIO</h1>
-
-        <h2 class="categoria">Ciencia Ficción y Fantasía</h2>
-
-        <div class="contenedorDuracion">
-          <h3 class="textoDuracion">125 min</h3>
-        </div>
-
-        <div class="textoInformacion">
-          <p>(2019) Relata la historia de uno de los cuentos más truculentos con un enfoque neorrealista con un
-            toque
-            tenebroso
-            (...) <a class="text-blue-400">Detalles</a> </p>
-        </div>
-
-        <div class="favorito">
-          <img src="./img/estrella.svg" alt="Favorito">
-        </div>
-        <div class="descargar">
-          <a href="#">
-            <img src="./img/descargar.svg" alt="Descargar"></a>
-        </div>
-
-      </div>
-
-    </div>
+    
   </div>
 
   <footer class="fixed bottom-0 z-10 w-full md:w-12 md:h-screen md:flex">

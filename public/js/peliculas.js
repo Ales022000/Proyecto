@@ -38,7 +38,7 @@ function mostrarPelicula(data) {
        </div>
      </div>
 
-     <div class="contenedorInformacion">
+     <div class="contenedorInformacion ">
        <h1 class="nombrePelicula">${title}</h1>
 
        <h2 class="categoria">${genres}</h2>
@@ -47,7 +47,7 @@ function mostrarPelicula(data) {
          <h3 class="textoDuracion">${runtime}</h3>
        </div>
 
-       <div class="textoInformacion">
+       <div class="textoInformacion overflow-hidden">
          <p> ${overview} </p>
        </div>
        
