@@ -19,14 +19,17 @@ function mostrarPelicula(data) {
 
   main.innerHTML = '';
 
-    data.forEach(pelicula => {
+    data.forEach(datosDeLaPelicula => {
        
-       const {id, title, poster_path, vote_average, overview, runtime, genres} = pelicula;
-       const peliculaE1 = document.createElement('div');
-       peliculaE1.setAttribute('href', `/movie-info.html?id=${id}`)
-       peliculaE1.classList.add('contenedorPeliculas');
+       const {id, title, poster_path, vote_average, overview, runtime, genres=[]} = datosDeLaPelicula;
+       const pelicula = document.createElement('div');
+       pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
+       pelicula.classList.add('contenedorPeliculas');
        
-       peliculaE1.innerHTML = `
+
+      
+       console.log(" y tambien " )
+       pelicula.innerHTML = `
        
        <div class="contenedorTrending">
        <img class="rounded-xl" src="${image_url + poster_path}" alt="${title}">
@@ -41,7 +44,7 @@ function mostrarPelicula(data) {
      <div class="contenedorInformacion ">
        <h1 class="nombrePelicula">${title}</h1>
 
-       <h2 class="categoria">${genres}</h2>
+       <h2 class="categoria">categoria: ${genres}</h2>
 
        <div class="contenedorDuracion">
          <h3 class="textoDuracion">${runtime}</h3>
@@ -64,6 +67,6 @@ function mostrarPelicula(data) {
 
        `
 
-       main.appendChild(peliculaE1);
+       main.appendChild(pelicula);
     });
 }
