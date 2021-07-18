@@ -3,6 +3,7 @@ const base_url = "https://api.themoviedb.org/3";
 const api_url = base_url + '/discover/movie?sort_by=popularity.desc&' + api_key + '&language=es-ES';
 const image_url = 'https://image.tmdb.org/t/p/w500';
 const main = document.getElementById('main');
+const idPelicula;
 
 obtenerPelicula(api_url);
 
@@ -26,9 +27,9 @@ function mostrarPelicula(data) {
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
        
-
       
-       console.log(" y tambien " )
+       idPelicula = id;
+       console.log(" id" + idPelicula)
        pelicula.innerHTML = `
        
        <div class="contenedorTrending">
@@ -44,7 +45,7 @@ function mostrarPelicula(data) {
      <div class="contenedorInformacion ">
        <h1 class="nombrePelicula">${title}</h1>
 
-       <h2 class="categoria">categoria: ${genres}</h2>
+       <h2 class="categoria">categoria:  ${id}</h2>
 
        <div class="contenedorDuracion">
          <h3 class="textoDuracion">${runtime}</h3>
