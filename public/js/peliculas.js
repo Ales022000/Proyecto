@@ -8,6 +8,7 @@ const contenedorPeliculasPopulares = document.getElementById('contenedorPelicula
 const contenedorPeliculasDeAccion = document.getElementById('contenedorPeliculasDeAccion');
 const formularioDeBusqueda = document.getElementById('formularioDeBusqueda');
 const busqueda = document.getElementById('busqueda');
+const botonBuscar = document.getElementById('botonBuscar');
 
 obtenerPeliculas(api_url);
 
@@ -132,19 +133,22 @@ function mostrarPeliculasDeAccion(data) {
     });
 }
 
-formularioDeBusqueda.addEventListener('submit', (e) => {
 
+botonBuscar.addEventListener("click", function(e){
+	
   e.preventDefault();
 
   const peliculaABuscar = busqueda.value;
 
   if(peliculaABuscar){
 
-    obtenerPeliculas(busqueda_url + '&query=' + peliculaABuscar)
-  }else {
+     obtenerPeliculas(busqueda_url + '&query=' + peliculaABuscar)
+ 
+    }else {
 
     obtenerPeliculas(api_url);
   }
-})
+
+});
 
  
