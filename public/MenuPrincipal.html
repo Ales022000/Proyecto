@@ -13,7 +13,7 @@
 <body class="prueba">
   <div class="fixed w-full h-full bg-cover fondoPantalla -z-1"></div>
 
-  <header class="fixed top-0 z-20 w-full">
+  <header class="fixed top-0 z-20 w-full" id="header">
 
     <div class="flex w-full py-4 bg-gray-400"> 
 
@@ -63,19 +63,21 @@
       </div>
 
        
-      <div class="my-auto mx-auto inline-flex bg-red-500">
-        <input class="bg-white rounded-md" id="busquedaPelicula">
-        <a href="#" class="block w-6">
-          <img src="./img/buscar.svg" alt="Buscar"></a>
-      </div>
+      <form id="formularioDeBusqueda">
+
+        <input type="text" class="bg-blue-500" id="busqueda">
+
+      </form>
 
     </div>
   </header>
 
-  <div class="w-full px-2 pt-20 pb-10 md:pl-16" id="main">
+  <div class="w-full px-2 pt-20 pb-10 md:pl-16" id="contenedorPeliculasPopulares">
 
  
   </div>
+
+  
 
   <footer class="fixed bottom-0 z-10 w-full md:w-12 md:h-screen md:flex">
 

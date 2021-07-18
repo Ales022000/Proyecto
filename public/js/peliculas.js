@@ -2,9 +2,12 @@ const api_key = "api_key=4ed5aae0e5dd89775521a8ce7db46e80";
 const base_url = "https://api.themoviedb.org/3";
 const api_url = base_url + '/discover/movie?sort_by=popularity.desc&' + api_key + '&language=es-ES';
 const image_url = 'https://image.tmdb.org/t/p/w500';
-const main = document.getElementById('main');
-const url_busqueda_PorId = "https://api.themoviedb.org/3/movie/497698?api_key=4ed5aae0e5dd89775521a8ce7db46e80&language=es-ES";
+const busqueda_url = base_url + "/search/movie?" + api_key + "&language=es-ES";
 
+const contenedorPeliculasPopulares = document.getElementById('contenedorPeliculasPopulares');
+const contenedorPeliculasDeAccion = document.getElementById('contenedorPeliculasDeAccion');
+const formularioDeBusqueda = document.getElementById('formularioDeBusqueda');
+const busqueda = document.getElementById('busqueda');
 
 obtenerPeliculas(api_url);
 
@@ -19,7 +22,7 @@ function obtenerPeliculas(url) {
 
 function mostrarPeliculasPopulares(data) {
 
-  main.innerHTML = '';
+  contenedorPeliculasPopulares.innerHTML = '';
 
     data.forEach(datosDeLaPelicula => {
        
@@ -28,7 +31,7 @@ function mostrarPeliculasPopulares(data) {
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
        
-       obtenerPeliculaPorId();
+   
       
        pelicula.innerHTML = `
        
@@ -68,13 +71,13 @@ function mostrarPeliculasPopulares(data) {
 
        `
 
-       main.appendChild(pelicula);
+       contenedorPeliculasPopulares.appendChild(pelicula);
     });
 }
 
 function mostrarPeliculasDeAccion(data) {
 
-  main.innerHTML = '';
+  contenedorPeliculasDeAccion.innerHTML = '';
 
     data.forEach(datosDeLaPelicula => {
        
@@ -83,8 +86,10 @@ function mostrarPeliculasDeAccion(data) {
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
        
-       obtenerPeliculaPorId(497698);
       
+      
+       
+
        pelicula.innerHTML = `
        
        <div class="contenedorTrending">
@@ -123,19 +128,23 @@ function mostrarPeliculasDeAccion(data) {
 
        `
 
-       main.appendChild(pelicula);
+       contenedorPeliculasDeAccion.appendChild(pelicula);
     });
 }
 
-function obtenerPeliculaPorId() {
+formularioDeBusqueda.addEventListener('submit', (e) => {
 
+  e.preventDefault();
 
- fetch(url_busqueda_PorId).then(res => res.json()).then(data => {
+  const peliculaABuscar = busqueda.value;
 
-  console.log(data.results);
- 
+  if(peliculaABuscar){
 
-   })
- }
+    obtenerPeliculas(busqueda_url + '&query=' + peliculaABuscar)
+  }else {
+
+    obtenerPeliculas(api_url);
+  }
+})
 
  
