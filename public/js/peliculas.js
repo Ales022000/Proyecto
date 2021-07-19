@@ -135,14 +135,21 @@ botonBuscar.addEventListener("click", function(e){
 
   const peliculaABuscar = busqueda.value;
 
-  if(peliculaABuscar){
+  if(busqueda.value == ""){
 
-     obtenerPeliculas(busqueda_url + '&query=' + peliculaABuscar)
- 
-    }else {
-
+    alert("Lo sentimos, debe ingresar algún nombre de pelicula");
     obtenerPeliculas(api_url);
+  
+  }else{
+
+    if(peliculaABuscar){
+
+      obtenerPeliculas(busqueda_url + '&query=' + peliculaABuscar)
+  
+     }
   }
+
+
 
 });
 
