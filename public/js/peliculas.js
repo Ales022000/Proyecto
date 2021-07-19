@@ -27,13 +27,12 @@ function mostrarPeliculasPopulares(data) {
 
     data.forEach(datosDeLaPelicula => {
        
-       const {id, title, poster_path, vote_average, overview, runtime} = datosDeLaPelicula;
+       const {id, title, poster_path, vote_average, overview, runtime, release_date} = datosDeLaPelicula;
        const pelicula = document.createElement('div');
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
        
-   
-      
+     
        pelicula.innerHTML = `
        
        <div class="contenedorTrending">
@@ -46,17 +45,15 @@ function mostrarPeliculasPopulares(data) {
        </div>
      </div>
 
-     <div class="contenedorInformacion">
+     <div class="contenedorInformacion h-56">
        <h1 class="nombrePelicula">${title}</h1>
 
-       <h2 class="categoria">categoria:  ${id}</h2>
-
        <div class="contenedorDuracion">
-         <h3 class="textoDuracion">${runtime}</h3>
+         <h3 class="textoDuracion">${release_date}</h3>
        </div>
 
-       <div class="textoInformacion overflow-hidden">
-         <p> ${overview} </p>
+       <div class="textoInformacion ">
+         <p class="text-sx leading-none"> ${overview} </p>
        </div>
        
        <div class="favorito">
@@ -105,8 +102,6 @@ function mostrarPeliculasDeAccion(data) {
 
      <div class="contenedorInformacion ">
        <h1 class="nombrePelicula">${title}</h1>
-
-       <h2 class="categoria">categoria:  ${id}</h2>
 
        <div class="contenedorDuracion">
          <h3 class="textoDuracion">${runtime}</h3>
