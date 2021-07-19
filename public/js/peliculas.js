@@ -46,7 +46,7 @@ function mostrarPeliculasPopulares(data) {
        </div>
      </div>
 
-     <div class="contenedorInformacion ">
+     <div class="contenedorInformacion">
        <h1 class="nombrePelicula">${title}</h1>
 
        <h2 class="categoria">categoria:  ${id}</h2>
@@ -85,7 +85,7 @@ function mostrarPeliculasDeAccion(data) {
        const {id, title, poster_path, vote_average, overview, runtime} = datosDeLaPelicula;
        const pelicula = document.createElement('div');
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
-       pelicula.classList.add('contenedorPeliculas');
+       pelicula.classList.add('contenedorPeliculasAcc');
        
       
       
@@ -96,7 +96,7 @@ function mostrarPeliculasDeAccion(data) {
        <div class="contenedorTrending">
        <img class="rounded-xl" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
-         <img src="./img/boton-de-play (3).svg" alt="Play">
+       <img src="./img/boton-de-play (3).svg" alt="Play">
        </div>
        <div class="contenedorCalificacion">
          <h1 class="textoCalificacion">${vote_average}</h1>
