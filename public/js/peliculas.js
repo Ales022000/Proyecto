@@ -38,7 +38,7 @@ function mostrarPeliculasPopulares(data) {
        <div class="contenedorTrending">
        <img class="rounded-xl" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
-         <img src="./img/boton-de-play (3).svg" alt="Play">
+       <a href="Informacion.html">  <img src="./img/boton-de-play (3).svg" alt="Play"></a>
        </div>
        <div class="contenedorCalificacion">
          <h1 class="textoCalificacion">${vote_average}</h1>
@@ -93,7 +93,8 @@ function mostrarPeliculasDeAccion(data) {
        <div class="contenedorTrending">
        <img class="rounded-xl" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
-       <img src="./img/boton-de-play (3).svg" alt="Play">
+       <a href="AcercaDe.html" class="block w-6" id="botonPlay">
+       <img src="./img/boton-de-play (3).svg" alt="Play"></a>
        </div>
        <div class="contenedorCalificacion">
          <h1 class="textoCalificacion">${vote_average}</h1>
@@ -115,7 +116,7 @@ function mostrarPeliculasDeAccion(data) {
        <img src="./img/estrella.svg" alt="Favorito">
      </div>
      <div class="descargar">
-       <a href="#">
+       <a href="AcercaDe.html">
          <img src="./img/descargar.svg" alt="Descargar"></a>
      </div>
 
