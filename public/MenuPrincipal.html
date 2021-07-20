@@ -18,18 +18,17 @@
 
     <div class="flex w-full py-4 bg-gray-400"> 
 
-      <div class="my-auto ml-4 mr-auto">
-        <a href="#" class="block w-6">
+      <div class="my-auto ml-4 mr-auto md:hidden">
+        <a href="#" class="block w-6" id="botonMenu">
           <img src="./img/boton-de-menu-de-tres-lineas-horizontales.svg" alt="Menú"></a>
       </div>
 
       <div class="class= my-auto mx-auto inline-flex">
-        <select class="text-lg text-blue-500 bg-gray-400 text-semibold md:hidden">
-          <option>Trending Movies</option>
 
-        </select>
+        <p class="text-lg text-blue-500 bg-gray-400 text-semibold md:hidden">Trending Movies</p>
+       
         <div class="hidden text-lg text-blue-500 text-semibold md:flex ">
-          <a href="#" class="w-auto mx-4">Inicio</a>
+          <a href="MenuPrincipal.html" class="w-auto mx-4">Inicio</a>
           <select class="bg-transparent" name="Genero" id="GeneroDePelicula">
 
             <option selected>Género</option>
@@ -66,7 +65,7 @@
       </div>
 
        
-      <form class="inline-flex" id="formularioDeBusqueda">
+      <form class="hidden md:inline-flex" id="formularioDeBusqueda">
 
         <input type="text" class="bg-white rounded-md" id="busqueda">
         <a href="#" class="b w-6" id="botonBuscar">
@@ -78,7 +77,11 @@
 
   <div class="w-full px-2 pt-20 pb-10 md:pl-16" id="contenedorPeliculasPopulares">
    
+<<<<<<< HEAD
      
+=======
+  
+>>>>>>> 869c6dff809dc2aa34b48c9efa56edc67ad80900
   </div>
 
   <footer class="fixed bottom-0 z-10 w-full md:w-12 md:h-screen md:flex">
