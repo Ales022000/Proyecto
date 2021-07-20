@@ -29,14 +29,15 @@ function mostrarPeliculasPopulares(data) {
        
        const {id, title, poster_path, vote_average, overview, runtime, release_date} = datosDeLaPelicula;
        const pelicula = document.createElement('div');
-       pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
+       const urlPelicula = `./informacion.html?id=${id}`;
        
        pelicula.innerHTML = `
        <div class="contenedorTrending">
        <img class="rounded-xl border" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
-       <a href="Informacion.html">  <img src="./img/boton-de-play (3).svg" alt="Play"></a>
+      
+       <a href="${urlPelicula}">  <img src="./img/boton-de-play (3).svg" alt="Play"></a>
        </div>
 
        <div class="contenedorCalificacion">
@@ -70,21 +71,6 @@ function mostrarPeliculasPopulares(data) {
     });
 }
 
-function ajustarTamaño(texto){
-  let palabras = texto.split(' ');
-  let contador = 0;
-  let textoAlternativo= '';
-  palabras.forEach(element => {
-    contador++;
-    if(contador < 70 ){
-    textoAlternativo+= element+ ' ';
-    }
-    if(contador == 71 ){
-      textoAlternativo+= '(...) ';
-    }
-  });
-  return textoAlternativo;
-}
 function mostrarPeliculasDeAccion(data) {
 
   contenedorPeliculasDeAccion.innerHTML = '';
@@ -160,3 +146,19 @@ botonBuscar.addEventListener("click", function(e){
 });
 
  
+
+function ajustarTamaño(texto){
+  let palabras = texto.split(' ');
+  let contador = 0;
+  let textoAlternativo= '';
+  palabras.forEach(element => {
+    contador++;
+    if(contador < 70 ){
+    textoAlternativo+= element+ ' ';
+    }
+    if(contador == 71 ){
+      textoAlternativo+= '(...) ';
+    }
+  });
+  return textoAlternativo;
+}
