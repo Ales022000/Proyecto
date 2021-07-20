@@ -157,13 +157,6 @@ botonBuscar.addEventListener("click", function(e){
   
      }
   }
-
-
-
-<<<<<<< HEAD
-  
-=======
->>>>>>> 869c6dff809dc2aa34b48c9efa56edc67ad80900
 });
 
  
