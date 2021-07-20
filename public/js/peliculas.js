@@ -32,28 +32,27 @@ function mostrarPeliculasPopulares(data) {
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculas');
        
-     
        pelicula.innerHTML = `
-       
        <div class="contenedorTrending">
-       <img class="rounded-xl" src="${image_url + poster_path}" alt="${title}">
+       <img class="rounded-xl border" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
          <img src="./img/boton-de-play (3).svg" alt="Play">
        </div>
+
        <div class="contenedorCalificacion">
          <h1 class="textoCalificacion">${vote_average}</h1>
        </div>
      </div>
 
-     <div class="contenedorInformacion h-56">
+     <div class="contenedorInformacion">
        <h1 class="nombrePelicula">${title}</h1>
 
        <div class="contenedorDuracion">
          <h3 class="textoDuracion">${release_date}</h3>
        </div>
 
-       <div class="textoInformacion ">
-         <p class="text-sx leading-none"> ${overview} </p>
+       <div class="textoInformacion">
+         <p class="text-sx leading-none"> ${ajustarTamaño(overview)} </p>
        </div>
        
        <div class="favorito">
@@ -64,15 +63,28 @@ function mostrarPeliculasPopulares(data) {
          <img src="./img/descargar.svg" alt="Descargar"></a>
      </div>
 
-
      </div>
-
        `
 
        contenedorPeliculasPopulares.appendChild(pelicula);
     });
 }
 
+function ajustarTamaño(texto){
+  let palabras = texto.split(' ');
+  let contador = 0;
+  let textoAlternativo= '';
+  palabras.forEach(element => {
+    contador++;
+    if(contador < 70 ){
+    textoAlternativo+= element+ ' ';
+    }
+    if(contador == 71 ){
+      textoAlternativo+= '(...) ';
+    }
+  });
+  return textoAlternativo;
+}
 function mostrarPeliculasDeAccion(data) {
 
   contenedorPeliculasDeAccion.innerHTML = '';
@@ -84,10 +96,6 @@ function mostrarPeliculasDeAccion(data) {
        pelicula.setAttribute('href', `/movie-info.html?id=${id}`)
        pelicula.classList.add('contenedorPeliculasAcc');
        
-      
-      
-       
-
        pelicula.innerHTML = `
        
        <div class="contenedorTrending">
@@ -144,6 +152,9 @@ botonBuscar.addEventListener("click", function(e){
     obtenerPeliculas(api_url);
   }
 
+
+
+  
 });
 
  
