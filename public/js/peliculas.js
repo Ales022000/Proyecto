@@ -12,10 +12,9 @@ const botonBuscar = document.getElementById('botonBuscar');
 
 obtenerPeliculas(api_url);
 
+
 function obtenerPeliculas(url) {
-
     fetch(url).then(res => res.json()).then(data => {
-
       console.log(data.results);
       mostrarPeliculasPopulares(data.results);
     })
@@ -27,7 +26,7 @@ function mostrarPeliculasPopulares(data) {
 
     data.forEach(datosDeLaPelicula => {
        
-       const {id, title, poster_path, vote_average, overview, runtime, release_date} = datosDeLaPelicula;
+       const {id, title, poster_path, vote_average, overview,original_title} = datosDeLaPelicula;
        const pelicula = document.createElement('div');
        pelicula.classList.add('contenedorPeliculas');
        const urlPelicula = `./informacion.html?id=${id}`;
@@ -49,7 +48,7 @@ function mostrarPeliculasPopulares(data) {
        <h1 class="nombrePelicula">${title}</h1>
 
        <div class="contenedorDuracion">
-         <h3 class="textoDuracion">${release_date}</h3>
+         <h3 class="textoDuracion">${original_title}</h3>
        </div>
 
        <div class="textoInformacion">
@@ -99,7 +98,7 @@ function mostrarPeliculasDeAccion(data) {
        <h1 class="nombrePelicula">${title}</h1>
 
        <div class="contenedorDuracion">
-         <h3 class="textoDuracion">${runtime}</h3>
+         <h3 class="textoDuracion">${duracionPelicula(id)}</h3>
        </div>
 
        <div class="textoInformacion overflow-hidden">
@@ -145,8 +144,6 @@ botonBuscar.addEventListener("click", function(e){
   }
 });
 
- 
-
 function ajustarTamaño(texto){
   let palabras = texto.split(' ');
   let contador = 0;
@@ -162,3 +159,4 @@ function ajustarTamaño(texto){
   });
   return textoAlternativo;
 }
+
