@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const api_key = "?api_key=4ed5aae0e5dd89775521a8ce7db46e80";
     const base_url = "https://api.themoviedb.org/3/movie/";
     const api_url = base_url + id + api_key + '&language=es-ES';
-    console.log(api_url );
-    verDetalles(api_url );
+    const api_url_credits =  base_url + id + '/credits'+ api_key+ '&language=es-ES';
+    verDetalles(api_url , api_url_credits);
+    
 });
      
 const getUrlVars = () => {
@@ -15,7 +16,7 @@ const getUrlVars = () => {
     });
     return vars;
 }
-    function verDetalles(url) {
+    function verDetalles(url, url_credits) {
         fetch(url).then(res => res.json())
         .then(function(data){
 
@@ -25,7 +26,9 @@ const getUrlVars = () => {
            insertarDuracion(data);
            insertarGeneros(data);
            insertarDescripcion(data);
+         verReparto(url_credits);
     });
+
     }
 
     function insertarFondo(data){
@@ -56,23 +59,51 @@ const getUrlVars = () => {
         let genres = data.genres;
         let texto = '';
          genres.forEach(element => {
-             texto += " ["+element.name+ "] ";
+             texto += " ["+element.name+"] ";
          });
          const html =`${texto}`; 
          document.getElementsByClassName('Generos')[0].innerHTML = html;
 
     }
-    function insertarDescripcion(data){
+    function insertarDescripcion(data, url){
         const html= `${data.overview}`;
         document.getElementsByClassName('InformacionPelicula')[0].innerHTML = html;
+        
     }
-let bntMoverDerecha = document.querySelector(".moverDerecha")
 
-bntMoverDerecha.addEventListener("click", function(e) {
-    moverSliderDerecha();
-});
+    function verReparto(url){
+       
+        fetch(url).then(res => res.json())
+        .then(function(data){
+            const listado = document.getElementsByClassName('listado')[0];
+            listado.innerHTML = '';
+            var arreglo = data.cast;
+            arreglo.forEach(element => {
+
+                if(element.known_for_department == "Acting"){  
+                if(element.popularity > 5){          
+                    const urlImagen = `https://image.tmdb.org/t/p/original${element.profile_path}`;              
+                    const actor = document.createElement('li');
+                    actor.classList.add('w-full');
+                    actor.classList.add('max-w-140');
+                    actor.classList.add('p-1');
+
+                    actor.innerHTML = 
+                    `<img alt="${element.name}"
+                    class="w-full max-w-xs max-h-52 rounded-xl border-2 border-gray-300 rounded-md w-45 h-60 sm:h-48"
+                    src="${urlImagen}" />
+                    <div class="w-full max-w-xs mt-4 text-white text-center text-sm">
+                    <h1 class="mb-1 font-bold">${element.name}</h1>
+                    <h2 class="italic">${element.character}</h2>
+                  </div>
+
+                    `;
+                    listado.appendChild(actor);
+                    }
+                }
+            });
+    });
+
+               
     
-function moverSliderDerecha(){
-    var listado = $('.listado');
-    listado.css('animation', 'cambio 60s infinite alternate');
 }

@@ -45,39 +45,4 @@
         @apply absolute w-6 h-6 right-12 bottom-1;
     }
 
-    @keyframes cambio {
-      0% { transform: translateX(0); }
-      8% { transform: translateX(0); }
-   
-      9% { transform: translateX(-10%); }
-      17% { transform: translateX(-10%); }
-   
-      18% { transform: translateX(-20%); }
-      26% { transform: translateX(-20%); }           
-   
-      27% { transform: translateX(-30%); }
-      35% { transform: translateX(-30%); }
-   
-      36% { transform: translateX(-40%); }
-      44% { transform: translateX(-40%); }
-   
-      46% { transform: translateX(-50%); }
-      53% { transform: translateX(-50%); }
-
-      54% { transform: translateX(-60%); }
-      62% { transform: translateX(-60%); }
-   
-      63% { transform: translateX(-700%); }
-      71% { transform: translateX(-700%); }           
-   
-      72% { transform: translateX(-800%); }
-      80% { transform: translateX(-800%); }
-   
-      81% { transform: translateX(-900%); }
-      89% { transform: translateX(-900%); }
-   
-      90% { transform: translateX(-1000%); }
-      100% { transform: translateX(-1000%); }
-  }
-
   }

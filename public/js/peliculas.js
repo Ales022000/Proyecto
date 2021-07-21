@@ -64,8 +64,7 @@ function mostrarPeliculasPopulares(data) {
      </div>
 
      </div>
-       `
-
+       `;
        contenedorPeliculasPopulares.appendChild(pelicula);
     });
 }
