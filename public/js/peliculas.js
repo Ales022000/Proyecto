@@ -4,11 +4,13 @@ const base_url = "https://api.themoviedb.org/3";
 const api_popularity_url = base_url + '/discover/movie?sort_by=popularity.desc&' + api_key + '&language=es-ES';
 const api_top_rated_url = base_url + '/movie/top_rated?' + api_key + '&language=es-ES';
 const api_upcoming_url = base_url + '/movie/upcoming?' + api_key + '&language=es-ES';
+const api_now_playing_url = base_url + '/movie/now_playing?' + api_key + '&language=es-ES';
+
 
 const image_url = 'https://image.tmdb.org/t/p/w500';
 const busqueda_url = base_url + "/search/movie?" + api_key + "&language=es-ES";
 
-const contenedorPeliculas = document.getElementById('contenedorPeliculas');
+const contenedorDeLasPeliculas = document.getElementById('contenedorDeLasPeliculas');
 const busqueda = document.getElementById('busqueda');
 const botonBuscar = document.getElementById('botonBuscar');
 
@@ -28,12 +30,12 @@ categorias.addEventListener('change', (event) => {
     if (event.target.value == "Próximamente") {
       obtenerPeliculas(api_upcoming_url);
     }
+    else
+    if (event.target.value == "Cartelera") {
+      obtenerPeliculas(api_now_playing_url);
+    }
+      
 });
-
-
-
-
-
 
 function obtenerPeliculas(url) {
   fetch(url).then(res => res.json()).then(data => {
@@ -44,17 +46,19 @@ function obtenerPeliculas(url) {
 
 function mostrarPeliculas(data) {
 
-  contenedorPeliculas.innerHTML = '';
+  contenedorDeLasPeliculas.innerHTML = '';
 
   data.forEach(datosDeLaPelicula => {
 
     const { id, title, poster_path, vote_average, overview, original_title } = datosDeLaPelicula;
     const pelicula = document.createElement('div');
     pelicula.classList.add('contenedorPeliculas');
+    pelicula.classList.add('md:w-auto');
+  
     const urlPelicula = `./informacion.html?id=${id}`;
 
     pelicula.innerHTML = `
-       <div class="contenedorTrending">
+       <div class="contenedorTrending md:w-full">
        <img class="rounded-xl border" src="${image_url + poster_path}" alt="${title}">
        <div class="play">
       
@@ -66,7 +70,7 @@ function mostrarPeliculas(data) {
        </div>
      </div>
 
-     <div class="contenedorInformacion">
+     <div class="contenedorInformacion md:w-0">
        <h1 class="nombrePelicula">${title}</h1>
 
        <div class="contenedorDuracion">
@@ -87,7 +91,7 @@ function mostrarPeliculas(data) {
 
      </div>
        `;
-    contenedorPeliculas.appendChild(pelicula);
+       contenedorDeLasPeliculas.appendChild(pelicula);
   });
 }
 
@@ -119,10 +123,10 @@ function ajustarTamaño(texto) {
   let textoAlternativo = '';
   palabras.forEach(element => {
     contador++;
-    if (contador < 70) {
+    if (contador < 35) {
       textoAlternativo += element + ' ';
     }
-    if (contador == 71) {
+    if (contador == 36) {
       textoAlternativo += '(...) ';
     }
   });
