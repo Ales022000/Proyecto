@@ -41,7 +41,7 @@ const getUrlVars = () => {
  
     function insertarImagen(data){
         const urlImagen = `https://image.tmdb.org/t/p/original${data.poster_path}`;
-        const html = `<img src="${urlImagen}" width="45%" class="shadow-2xl rounded-xl"  alt="${data.title}"/>`;
+        const html = `<img src="${urlImagen}" width="50%" class="shadow-2xl rounded-xl w-65"  alt="${data.title}"/>`;
         document.getElementsByClassName('ImagenJs')[0].innerHTML = html;
         
     }
@@ -90,7 +90,7 @@ const getUrlVars = () => {
 
                     actor.innerHTML = 
                     `<img alt="${element.name}"
-                    class="w-full max-w-xs max-h-52 rounded-xl border-2 border-gray-300 rounded-md w-45 h-60 sm:h-48"
+                    class="w-24 h-32  md:w-full md:max-w-xs md:max-h-52 rounded-md  md:h-60 sm:h-48"
                     src="${urlImagen}" />
                     <div class="w-full max-w-xs mt-4 text-white text-center text-sm">
                     <h1 class="mb-1 font-bold">${element.name}</h1>
