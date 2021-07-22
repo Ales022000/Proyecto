@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css" />
   <title>Peliculas</title>
+
+  
 </head>
 
 
@@ -16,22 +18,39 @@
 
   <header class="fixed top-0 z-20 w-full" id="header">
 
-    <div class="flex w-full py-4 bg-gray-400"> 
 
-      <div class="my-auto ml-4 mr-auto md:hidden">
+    <style>
+      #menu-toggle:checked + #menu {
+        display: block;
+      }
+  </style>
+
+    <div class="flex w-full py-4 bg-gray-400"> 
+      <div>
+        <label for="menu-toggle" class="pointer-cursor lg:hidden block text-white">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 object-right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg></label>
+    </div>
+    
+      <!-- <div class="my-auto ml-4 mr-auto md:hidden">
         <a href="#" class="block w-6" id="botonMenu">
           <img src="./img/boton-de-menu-de-tres-lineas-horizontales.svg" alt="Menú"></a>
-      </div>
-
-
-      <div class="my-auto mx-auto inline-flex">
-
+      </div> -->
+      <input class="hidden" type="checkbox" id="menu-toggle" />
+      <div class=" my-auto mx-auto hidden md:inline-flex " id="menu">
        
-       
-        <div class=" text-lg text-blue-500 text-semibold md:flex  ">
-         
+        <nav >
+          <ul class="lg:flex  justify-between text-base text-white pt-4 lg:pt-0">
+          <li><a class="lg:p-4 py-3 px-0 block border-2 border-transparent md:hidden " href="MenuPrincipal.html">Inicio</a></li>
+          <li><a class="lg:p-4 py-3 px-0 block border-2 border-transparent md:hidden  " href="AcercaDe.html">Acerca de</a></li>
+        </ul>
+          </nav>
+          </div>
+        <div class="text-lg text-blue-500 text-semibold md:flex  ">
+          <div class="hidden justify-between pr-9 xsm:w-full mx-auto  lg:flex lg:items-center lg:w-auto w-full" id="menu">
           <a href="MenuPrincipal.html" class="w-auto mx-4 hidden md:flex">Inicio</a>
-
+        </div>
           <select class="cursor-pointer CategoriasPeliculas bg-transparent mx-2 text-center pr-16" name="Genero" id="GeneroDePelicula">
 
             <option selected>Populares</option>
