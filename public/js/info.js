@@ -93,7 +93,7 @@ const getUrlVars = () => {
                     class="w-24 h-32  md:w-full md:max-w-xs md:max-h-52 rounded-md  md:h-60 sm:h-48"
                     src="${urlImagen}" />
                     <div class="w-full max-w-xs mt-4 text-white text-center text-sm">
-                    <h1 class="mb-1 font-bold">${element.name}</h1>
+                    <h1 class=" text-sm md:text-base mb-1 font-bold">${element.name}</h1>
                     <h2 class="italic">${element.character}</h2>
                   </div>
 
