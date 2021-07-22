@@ -13,6 +13,7 @@ const busqueda_url = base_url + "/search/movie?" + api_key + "&language=es-ES";
 const contenedorDeLasPeliculas = document.getElementById('contenedorDeLasPeliculas');
 const busqueda = document.getElementById('busqueda');
 const botonBuscar = document.getElementById('botonBuscar');
+const botonMenu = document.getElementById('botonMenu');
 
 obtenerPeliculas(api_popularity_url);
 
@@ -60,7 +61,7 @@ function mostrarPeliculas(data) {
     pelicula.innerHTML = `
        <div class="contenedorTrending md:w-full">
        <img class="rounded-xl border" src="${image_url + poster_path}" alt="${title}">
-       <div class="play">
+       <div class="animate-pulse play">
       
        <a href="${urlPelicula}">  <img src="./img/boton-de-play (3).svg" alt="Play"></a>
        </div>

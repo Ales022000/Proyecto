@@ -23,13 +23,16 @@
           <img src="./img/boton-de-menu-de-tres-lineas-horizontales.svg" alt="Menú"></a>
       </div>
 
+
       <div class="my-auto mx-auto inline-flex">
 
        
        
-        <div class=" text-lg text-blue-500 text-semibold md:flex ">
-          <a href="MenuPrincipal.html" class="w-auto mx-4 hidden">Inicio</a>
-          <select class="CategoriasPeliculas bg-transparent mx-2 text-center" name="Genero" id="GeneroDePelicula">
+        <div class=" text-lg text-blue-500 text-semibold md:flex hidden ">
+         
+          <a href="MenuPrincipal.html" class="w-auto mx-4 ">Inicio</a>
+
+          <select class="cursor-pointer CategoriasPeliculas bg-transparent mx-2 text-center " name="Genero" id="GeneroDePelicula">
 
             <option selected>Populares</option>
 
@@ -56,6 +59,17 @@
 
     </div>
   </header>
+
+  <div class="contenedorMenu -mt-60 mt-14 w-full md:hidden">
+    <ul class="menu bg-blue-300">
+      <li class="menuItem"> <a href="MenuPrincipal.html" class="menuLink block py-3 ml-2" id="menuLink">Inicio</a></li>
+      <li class="menuItem"> <a href="#" class="menuLink block py-3 ml-2" id="menuLink">Populares</a></li>
+      <li class="menuItem"> <a href="#" class="menuLink block py-3 ml-2" id="menuLink">Mejor Valoradas</a></li>
+      <li class="menuItem"> <a href="#" class="menuLink block py-3 ml-2" id="menuLink">Cartelera</a></li>
+      <li class="menuItem"> <a href="#" class="menuLink block py-3 ml-2" id="menuLink">Próximamente</a></li>
+      <li class="menuItem"> <a href="AcercaDe.html" class="menuLink block py-3 ml-2" id="menuLink">Acerca De</a></li>
+     </ul>
+   </div>
 
   <div class="w-full px-2 pt-20 pb-10 md:pl-16" id="contenedorDeLasPeliculas">
    
